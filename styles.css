@@ -5,13 +5,63 @@
 }
 
 body {
+    --bg: #f5f5f5;
+    --card-bg: #f2f1ed;
+    --text: #333;
+    --text-secondary: #666;
+    --checkmark: #4a4a4a;
+    --btn-bg: #e6e5e0;
+    --btn-hover: #D8D6CE;
+    --btn-active: #D8D6CE;
+    --toggle-bg: #e6e5e0;
+    --toggle-hover: #D8D6CE;
+
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #f5f5f5;
+    background-color: var(--bg);
+    color: var(--text);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     min-height: 100vh;
     padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+    --bg: #121212;
+    --card-bg: #1e1e1e;
+    --text: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --checkmark: #b0b0b0;
+    --btn-bg: #2a2a2a;
+    --btn-hover: #383838;
+    --btn-active: #444;
+    --toggle-bg: #2a2a2a;
+    --toggle-hover: #383838;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--toggle-bg);
+    font-size: 22px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    background-color: var(--toggle-hover);
+    transform: scale(1.1);
 }
 
 .cards-container {
@@ -24,23 +74,24 @@ body {
 }
 
 .card {
-    background-color: #f2f1ed;
+    background-color: var(--card-bg);
     border-radius: 12px;
     padding: 40px 32px;
     width: 320px;
     flex-shrink: 0;
+    transition: background-color 0.3s ease;
 }
 
 .card-title {
     font-size: 32px;
     font-weight: 600;
-    color: #333;
+    color: var(--text);
     margin-bottom: 8px;
 }
 
 .card-price {
     font-size: 20px;
-    color: #666;
+    color: var(--text-secondary);
     margin-bottom: 24px;
 }
 
@@ -50,7 +101,7 @@ body {
 
 .includes-text {
     font-size: 16px;
-    color: #333;
+    color: var(--text);
     margin-bottom: 16px;
 }
 
@@ -64,11 +115,11 @@ body {
     align-items: center;
     margin-bottom: 12px;
     font-size: 15px;
-    color: #333;
+    color: var(--text);
 }
 
 .checkmark {
-    color: #4a4a4a;
+    color: var(--checkmark);
     font-size: 18px;
     margin-right: 12px;
     font-weight: bold;
@@ -76,21 +127,52 @@ body {
 
 .download-button {
     width: fit-content;
-    background-color: #e6e5e0;
+    background-color: var(--btn-bg);
     border: none;
     border-radius: 999px;
     padding: 14px 24px;
     font-size: 16px;
     font-weight: 500;
-    color: #333;
+    color: var(--text);
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .download-button:hover {
-    background-color: #D8D6CE;
+    background-color: var(--btn-hover);
 }
 
 .download-button:active {
-    background-color: #D8D6CE;
+    background-color: var(--btn-active);
+}
+
+.card-business {
+    background-color: #1a1a2e;
+}
+
+.card-business .card-title,
+.card-business .includes-text,
+.card-business .features-list li {
+    color: #f0f0f0;
+}
+
+.card-business .card-price {
+    color: #a0a0b8;
+}
+
+.card-business .checkmark {
+    color: #7c83ff;
+}
+
+.card-business .download-button {
+    background-color: #7c83ff;
+    color: #fff;
+}
+
+.card-business .download-button:hover {
+    background-color: #6a70e6;
+}
+
+.card-business .download-button:active {
+    background-color: #5b60cc;
 }
