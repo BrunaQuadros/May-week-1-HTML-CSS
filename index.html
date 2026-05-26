@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <button class="theme-toggle" onclick="document.body.classList.toggle('dark'); this.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';" aria-label="Toggle dark mode">🌙</button>
     <div class="cards-container">
         <div class="card">
             <h1 class="card-title">Hobby</h1>
@@ -55,6 +56,36 @@
                 </ul>
             </div>
             <button class="download-button">Get Pro</button>
+        </div>
+        <div class="card card-business">
+            <h1 class="card-title">Business</h1>
+            <p class="card-price">$40/mo. per user</p>
+            <div class="card-content">
+                <p class="includes-text">Everything in Pro, plus:</p>
+                <ul class="features-list">
+                    <li>
+                        <span class="checkmark">✓</span>
+                        Centralized team billing
+                    </li>
+                    <li>
+                        <span class="checkmark">✓</span>
+                        Admin usage dashboard
+                    </li>
+                    <li>
+                        <span class="checkmark">✓</span>
+                        Enforce privacy mode
+                    </li>
+                    <li>
+                        <span class="checkmark">✓</span>
+                        SAML/SSO single sign-on
+                    </li>
+                    <li>
+                        <span class="checkmark">✓</span>
+                        Priority support
+                    </li>
+                </ul>
+            </div>
+            <button class="download-button">Get Business</button>
         </div>
     </div>
 </body>
