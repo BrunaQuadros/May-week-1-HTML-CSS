@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button class="theme-toggle" onclick="document.body.classList.toggle('dark'); this.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';" aria-label="Toggle dark mode">🌙</button>
+    <button class="theme-toggle" onclick="document.body.classList.toggle('dark'); this.querySelector('.toggle-icon').textContent = document.body.classList.contains('dark') ? '☀️' : '🌙'; this.querySelector('.toggle-label').textContent = document.body.classList.contains('dark') ? 'Light' : 'Dark';" aria-label="Toggle dark mode"><span class="toggle-icon">🌙</span><span class="toggle-label">Dark</span></button>
     <div class="cards-container">
         <div class="card">
             <h1 class="card-title">Hobby</h1>
